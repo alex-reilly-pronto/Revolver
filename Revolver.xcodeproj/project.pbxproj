@@ -227,6 +227,12 @@
 		FA2E6EB729E5F6030042BDE0 /* RouletteSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouletteSelection.swift; sourceTree = "<group>"; };
 		FA2E6EB829E5F6030042BDE0 /* AndCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndCondition.swift; sourceTree = "<group>"; };
 		FA2E6F1F29E60ADA0042BDE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA2E6F2529E617D40042BDE0 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		FA2E6F2729E617D40042BDE0 /* DoubleArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleArray.swift; sourceTree = "<group>"; };
+		FA2E6F2829E617D40042BDE0 /* RevolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevolverTests.swift; sourceTree = "<group>"; };
+		FA2E6F2929E617D40042BDE0 /* EntropyGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntropyGeneratorTests.swift; sourceTree = "<group>"; };
+		FA2E6F2A29E617D40042BDE0 /* ArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
+		FA2E6F2B29E617D40042BDE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +258,7 @@
 		E29164351C8E0704002879C0 = {
 			isa = PBXGroup;
 			children = (
+				FA2E6F2429E617D40042BDE0 /* Tests */,
 				FA2E6F1F29E60ADA0042BDE0 /* Info.plist */,
 				FA2E6E5129E5F6030042BDE0 /* Sources */,
 				E29164401C8E0704002879C0 /* Products */,
@@ -383,6 +390,27 @@
 				FA2E6EB829E5F6030042BDE0 /* AndCondition.swift */,
 			);
 			path = Revolver;
+			sourceTree = "<group>";
+		};
+		FA2E6F2429E617D40042BDE0 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FA2E6F2529E617D40042BDE0 /* LinuxMain.swift */,
+				FA2E6F2629E617D40042BDE0 /* RevolverTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		FA2E6F2629E617D40042BDE0 /* RevolverTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA2E6F2729E617D40042BDE0 /* DoubleArray.swift */,
+				FA2E6F2829E617D40042BDE0 /* RevolverTests.swift */,
+				FA2E6F2929E617D40042BDE0 /* EntropyGeneratorTests.swift */,
+				FA2E6F2A29E617D40042BDE0 /* ArrayTests.swift */,
+				FA2E6F2B29E617D40042BDE0 /* Info.plist */,
+			);
+			path = RevolverTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
