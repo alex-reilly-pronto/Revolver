@@ -20,10 +20,10 @@ open class TreeNode: TreeType {
     }
     
     /// Unique identifier of the node within the tree.
-    open let id: Int
+    public let id: Int
     
     /// Longest path between this node and a leaf node. Stored for purposes of later modifications of the tree.
-    open let maximumDepth: Int
+    public let maximumDepth: Int
     
     /**
      Initialize new random subtree with specified maximum depth.

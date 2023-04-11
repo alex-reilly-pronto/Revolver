@@ -108,7 +108,7 @@ public final class SequenceNode: ActionNode {
         newSequence.reserveCapacity(actionSequence.count)
         
         for action in actionSequence {
-            let actionClone = action.clone(factory, mutateNodeId: id)
+            let actionClone = action.actionClone(factory, mutateNodeId: id)
             newSequence.append(actionClone)
         }
         

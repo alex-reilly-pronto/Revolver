@@ -96,9 +96,9 @@ public final class ConditionalNode: ActionNode {
      - returns: A clone of this node with a subtree, which is possibly mutated.
      */
     public override func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
-        let predicateClone = predicate.clone(factory, mutateNodeId: id)
-        let trueActionClone = trueAction.clone(factory, mutateNodeId: id)
-        let falseActionClone = falseAction.clone(factory, mutateNodeId: id)
+        let predicateClone = predicate.valueClone(factory, mutateNodeId: id)
+        let trueActionClone = trueAction.actionClone(factory, mutateNodeId: id)
+        let falseActionClone = falseAction.actionClone(factory, mutateNodeId: id)
         
         return ConditionalNode(id: id, maximumDepth: maximumDepth, predicate: predicateClone, trueAction: trueActionClone, falseAction: falseActionClone)
     }

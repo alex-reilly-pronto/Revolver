@@ -3,7 +3,7 @@
 open class UnaryNode<OperandType: Randomizable, ResultType: Randomizable>: ValueNode<ResultType> {
     
     /// Argument of the function.
-    open let operand: ValueNode<OperandType>
+    public let operand: ValueNode<OperandType>
     
     /// Next-level descendant nodes of this node, not necessarily of the same type.
     public final override var treeNodeDescendants: [TreeNode] {
@@ -72,7 +72,7 @@ open class UnaryNode<OperandType: Randomizable, ResultType: Randomizable>: Value
      */
     public final override func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ResultType> {
         // Clone the operand.
-        let operandClone = operand.clone(factory, mutateNodeId: id)
+        let operandClone = operand.valueClone(factory, mutateNodeId: id)
         
         // Construct new unary node around it.
         return callInitializer(operandClone)

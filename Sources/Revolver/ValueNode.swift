@@ -1,6 +1,9 @@
 
-/// Action node represents a course of action.
-open class ActionNode: TreeNode {
+/// Value node represents a scalar or vector value of any type (number, boolean, etc.)
+///
+/// - warning: This class is abstract meaning you probably don't want to instatiate it directly. Instead, subclass it
+///            and be sure to override the `evaluate()` method.
+open class ValueNode<ValueType: Randomizable>: TreeNode {
     
     /**
      Initialize new random subtree with specified maximum depth.
@@ -22,18 +25,20 @@ open class ActionNode: TreeNode {
      
      - returns: New subtree with set values.
      */
-    public required override init(id: Int, maximumDepth: Int) {
+    public override init(id: Int, maximumDepth: Int) {
         super.init(id: id, maximumDepth: maximumDepth)
     }
     
     /**
-     Perform the action in evaluation context.
+     Calculate the value represented by the node.
      
      - parameter interpreter: Current evaluation context.
      
+     - returns: Value represented by the node.
+     
      - warning: This method is abstract. You *must* override it in a subclass.
      */
-    open func perform(_ interpreter: TreeInterpreter) {
+    open func evaluate(_ interpreter: TreeInterpreter) -> ValueType {
         preconditionFailure("This method must be implemented in a subclass.")
     }
     
@@ -47,9 +52,9 @@ open class ActionNode: TreeNode {
      
      - remark: This method implements an abstract method of the superclass. You don't need to worry about it in subclasses.
      */
-    public final override func clone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
+    public final func valueClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode  {
         if id == self.id {
-            return factory.createRandomActionNode(self.maximumDepth)
+            return factory.createRandomValueNode(self.maximumDepth)
         } else {
             return propagateClone(factory, mutateNodeId: id)
         }
@@ -65,8 +70,8 @@ open class ActionNode: TreeNode {
      
      - warning: This method is abstract. You *must* override it in a subclass.
      */
-    open func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
-        preconditionFailure("This method must be implemented in a subclass.")
+    open func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ValueNode<ValueType> {
+        preconditionFailure("This method must be implemented in a subclass.")        
     }
     
 }

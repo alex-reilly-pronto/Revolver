@@ -79,8 +79,8 @@ public final class LoopNode: ActionNode {
      - returns: A clone of this node with a subtree, which is possibly mutated.
      */
     public override func propagateClone(_ factory: RandomTreeFactory, mutateNodeId id: Int) -> ActionNode {
-        let terminationConditionClone = terminationCondition.clone(factory, mutateNodeId: id)
-        let actionClone = action.clone(factory, mutateNodeId: id)
+        let terminationConditionClone = terminationCondition.valueClone(factory, mutateNodeId: id)
+        let actionClone = action.actionClone(factory, mutateNodeId: id)
         
         return LoopNode(id: id, maximumDepth: maximumDepth, terminationCondition: terminationConditionClone, action: actionClone)
     }
